@@ -14,8 +14,21 @@ Unlike simple downloaders, it acts as an intelligent **"Media Archiver"**. It ru
 **YT-Smart-Assistant (YT 智能助手)** 是一个为了突破浏览器限制而生的全栈工具。它不仅仅是一个下载器，更是一个部署在本地的**“媒体归档管家”**。通过油猴脚本与本地 Deno 后端的配合，它能实现 4K 视频流分析、字幕时间轴自动修复、垃圾文件自动清理以及无损封装等复杂功能。
 
 <p align="center">
-  <img src="images/screenshot.png" alt="OpsKit Interface" width="800">
+  <img src="ytassistant/audio codec with flags.jpg" alt="YT-Assistant Interface" width="800">
 </p>
+
+<p align="center">
+  <img src="ytassistant/multi-subtitles with flags.jpg" alt="YT-Assistant Interface" width="800">
+</p>
+
+<p align="center">
+  <img src="ytassistant/settings.jpg" alt="YT-Assistant Interface" width="800">
+</p>
+
+<p align="center">
+  <img src="ytassistant/backend display.jpg" alt="YT-Assistant Interface" width="800">
+</p>
+
 ------------------
 
 ## ✨ Key Features (核心功能)
@@ -180,3 +193,4 @@ The author assumes no responsibility for how this tool is used.
 
 
 本项目仅用于技术研究与教育目的（展示 Deno 运行时、FFmpeg 流映射与本地全栈交互技术）。请遵守相关法律法规及平台服务条款，切勿用于侵犯版权的行为。
+
