@@ -4,7 +4,7 @@
 
 [中文] 一个基于 Deno 全栈架构的流媒体智能归档与处理助手。
 
-https://github.com/user-attachments/assets/4a240d0b-3f43-4076-8132-829b79f45031
+https://github.com/user-attachments/assets/3e530969-429c-429b-94b0-dd165222e63d
 
 ## 📖 Introduction (简介)
 
@@ -194,5 +194,6 @@ The author assumes no responsibility for how this tool is used.
 
 
 本项目仅用于技术研究与教育目的（展示 Deno 运行时、FFmpeg 流映射与本地全栈交互技术）。请遵守相关法律法规及平台服务条款，切勿用于侵犯版权的行为。
+
 
 
