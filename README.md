@@ -86,33 +86,38 @@ Root/
 ├── ffmpeg.exe
 ├── ffprobe.exe
 └── yt-dlp.exe
+```
 
-🎮 Usage   
-Launch Backend: Double-click YT-Smart-Assistant.bat.
+---
 
-Keep the terminal open: 🚀 Service started at: http://localhost:6969.
+## 🎮 Usage
+* Launch Backend: Double-click `YT-Smart-Assistant.bat`. Keep the terminal open: 🚀 Service started at: http://localhost:6969.
 
-Install Frontend: Drag and drop script.user.js into your Tampermonkey Dashboard and click Install.
+* Install Frontend: Drag and drop `script.user.js` into your Tampermonkey Dashboard and click **Install**.
 
-Download: Open any YouTube video. Adjust settings on the floating panel and click "🚀 Download Now".
+* Download: Open any YouTube video. Adjust settings on the floating panel and click "🚀 **Download Now**".
 
-⚙️ Configuration & Troubleshooting
-🍪 The Cookie Issue (Unlocking 4K/8K)
-[!TIP]
-Don't forget to load cookies! By default, the engine uses Firefox cookies. Ensure you are logged into YouTube in Firefox.
+## ⚙️ Configuration & Troubleshooting   
 
-Using Chrome/Edge? Open Advanced Settings (⚙️) in the UI and change the browser source.
+**[TIPS]**
+* **Reset for New Video:** If you want to analyze a different video or clear the current results, simply **click the "Broom" (🧹) icon** at the top of the panel to reset the analyzer and start fresh.
 
-Portable Browser? You can specify the profile path directly in the UI settings.
+* Don't forget to **load cookies**! By default, the engine uses **Firefox** cookies. Ensure you are logged into YouTube in Firefox.  
 
-🌐 Proxy & VPN (Clash / V2Ray)
+
+* Using Chrome/Edge? Open **Advanced Settings** (⚙️) in the UI and change the browser source.
+
+
+## 🌐 Proxy & VPN (Clash / V2Ray)
 Ensure "System Proxy" is enabled in your VPN client.
 
 If downloads fail, try enabling TUN Mode.
 
-You can manually input --proxy "http://127.0.0.1:PORT" in the UI command box.
+You can manually input **--proxy "http://127.0.0.1:PORT"** in the UI command box.
 
-⚠️ Disclaimer
+## ⚠️ Disclaimer
 This project is for educational and technical research purposes only. Please respect copyright laws and platform Terms of Service. The author assumes no responsibility for any misuse.
 
 本项目仅用于技术研究与教育目的。请遵守相关法律法规及平台服务条款，切勿用于侵犯版权的行为。
+
+
