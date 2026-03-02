@@ -1,141 +1,118 @@
-# YT-Smart-Assistant
-**Current Version:** V1.0.3 
-(This is a massive milestone update)
+# 🚀 YT-Smart-Assistant
+
+**Current Version:** `V1.0.3`  
+*(This is a massive milestone update)*
 
 https://github.com/user-attachments/assets/3e530969-429c-429b-94b0-dd165222e63d
 
+---
+
 ## 📖 Introduction (简介)
-**YT-Smart-Assistant** is a full-stack media management tool designed to bridge the gap between browser interactions and regular users. A high-performance, privacy-focused downloading suite powered by Deno, yt-dlp, and FFmpeg.
-一个基于 Deno 全栈架构的流媒体智能归档与处理助手。
 
-Unlike simple downloaders, it acts as an intelligent **"Media Archiver"**. It runs a local Deno server to handle complex tasks that browsers cannot perform: analyzing 4K streams, fixing subtitle timestamps, batch cleaning junk files, and strictly muxing tracks into clean MP4 containers.
-
-**YT-Smart-Assistant (YT智能助手)** 是一个为了突破浏览器限制而生的全栈工具。它不仅仅是一个下载器，更是一个部署在本地的**“媒体归档管家”**。通过油猴脚本与本地 Deno 后端的配合，它能实现 4K 视频流分析、字幕时间轴自动修复、垃圾文件自动清理以及无损封装等复杂功能。
+**YT-Smart-Assistant** is a high-performance, privacy-focused media management tool. Unlike simple downloaders, it acts as an intelligent **"Media Archiver"**, bridging the gap between browser interactions and high-end processing.
+**YT-Smart-Assistant (YT智能助手)** 是一个基于 Deno 全栈架构的流媒体智能归档助手。它不仅仅是一个下载器，更是一个部署在本地的**“媒体归档管家”**，通过油猴脚本与本地后端的配合，实现 4K 视频分析、字幕自动修复与无损封装。
 
 <p align="center">
-  <img src="ytassistant/audio codec with flags.jpg" alt="YT-Assistant Interface" width="800">
+  <img src="ytassistant/audio codec with flags.jpg" alt="Interface 1" width="800">
+  <img src="ytassistant/multi-subtitles with flags.jpg" alt="Interface 2" width="800">
+  <img src="ytassistant/settings.jpg" alt="Interface 3" width="800">
+  <img src="ytassistant/backend display.jpg" alt="Interface 4" width="800">
 </p>
 
-<p align="center">
-  <img src="ytassistant/multi-subtitles with flags.jpg" alt="YT-Assistant Interface" width="800">
-</p>
+---
 
-<p align="center">
-  <img src="ytassistant/settings.jpg" alt="YT-Assistant Interface" width="800">
-</p>
+## 🛡️ Security & Privacy (Zero Trust Architecture)
 
-<p align="center">
-  <img src="ytassistant/backend display.jpg" alt="YT-Assistant Interface" width="800">
-</p>
+> [!IMPORTANT]
+> **We build for safety.** This project follows a "Paranoid-First" approach to ensure your data stays yours.
 
-------------------
+* **🔒 100% Localhost:** The entire stack runs strictly on `127.0.0.1`. **Zero data** is sent to third-party servers.
+* **🛡️ XSS Immune:** Strictly **no `innerHTML`** usage. All UI rendering uses secure text-node methods to prevent malicious metadata injection.
+* **🚫 No Auto-Updates:** There are **no background update checks** or "phoning home" scripts. You are in total control of your version.
+* **📦 Bring Your Own Binaries:** You manage your core dependencies (`yt-dlp`, `ffmpeg`). Update them manually via official sources whenever you want.
+* **⚖️ The Bottom Line:** If there is a "security" alert, it is a vulnerability within your browser or local OS, not this tool.
 
-🛡️ Security & Privacy (Zero Trust Architecture)
-This project is built with a "Paranoid-First" approach. We believe software should be powerful without being intrusive.
+---
 
-100% Localhost Execution: The entire stack (Frontend script + Backend server) runs strictly on 127.0.0.1. Zero data is sent to third-party servers. Your cookies and credentials never leave your machine.
+## ✨ Key Features
 
-XSS Immune (No innerHTML): To ensure maximum security, the UI code strictly forbids the use of innerHTML. All DOM manipulations use secure text-node methods, eliminating risks from malicious metadata injection.
+### 🎥 Core Downloading
+* **🔍 Smart Analysis:** Automatically filters out low-res garbage (144p/240p). **Highest quality** (4K/8K + AV1) is always prioritized at the top.
+* **✂️ Precise Slicing:** Supports frame-perfect time-range downloads.
+* **🎯 Subtitle Slicing (Unique):** Automatically repairs and slices subtitle tracks to match your specific video clip. No more out-of-sync captions.
 
-No Auto-Updates (Anti-Supply-Chain): There are intentionally no background update checks or "phoning home" scripts. You are in total control. To upgrade, simply download the latest release manually.
+### 🧠 Intelligent Subtitle Pipeline `NEW`
+* **🔄 Auto-Fix:** Built-in algorithms fix timestamp overlaps and merge fragmented lines.
+* **🔥 Hot-Search Logic:** Uses modification-time heuristics to locate files, ignoring OS filename character mangling (e.g., `?` becoming `_`).
+* **📦 Clean Muxing:** Strips junk tracks (`und`, `orig`), keeping only high-quality English and Chinese tracks with correct metadata.
+* **🧹 Zero-Trace:** Instantly deletes `.srt`, `.orig`, and `.tmp` files after muxing.
 
-Bring Your Own Binaries: You manage your core dependencies. To update yt-dlp or FFmpeg, just replace the files in your local folder with the official versions.
+### 🎨 Advanced UX
+* **🖥️ UI Scaling:** A dynamic slider to resize the interface for any screen size (from 13" laptops to 4K monitors).
+* **⚡ Command Injection:** Dedicated input for raw `yt-dlp` arguments. Injected with **highest priority** to override default behaviors.
 
-The Bottom Line: If there is a "security" alert, it is a vulnerability within your browser or local OS environment, not this tool. The code is open-source—audit it yourself.
+---
 
-✨ Key Features
-🎥 Core Downloading
-🔍 Smart Analysis & Filtering: Automatically strips away low-resolution "noise" (144p/240p). The highest quality options (4K/8K + AV1/VP9) are intelligently prioritized at the top.
+## 🛠️ Tech Stack
 
-✂️ Precise Clip Slicing: Supports frame-perfect time-range downloads.
+* **Backend:** [Deno] (TypeScript) - Secure & modern runtime.
+* **Frontend:** Tampermonkey / GreaseMonkey (JavaScript).
+* **Core Engine:** `yt-dlp` & `ffmpeg`.
 
-🎯 Subtitle Slicing (Unique): Unlike other tools, this automatically slices and repairs subtitle tracks to match your specific video clip duration. No more out-of-sync full-length captions for a 5-minute clip.
+---
 
-🧠 Intelligent Subtitle Pipeline NEW
-Auto-Fix & De-Duplicate: Built-in algorithms fix timestamp overlaps and merge fragmented lines for a smooth reading experience.
+## 🚀 Installation
 
-Hot-Search Logic: Uses a modification-time heuristic to accurately locate downloaded files, bypassing errors caused by OS filename character mangling (e.g., ? becoming _).
+### Step 1: Backend Setup
+1. Go to the **[Releases](../../releases)** page.
+2. Download the latest `YT-Assistant-Full.zip`.
+3. Unzip to any folder.
 
-Clean Muxing: Automatically filters out junk tracks (und, orig), keeping only high-quality English and Chinese tracks with correct metadata tags.
+### Step 2: Browser Setup
+1. Install the **Tampermonkey** extension for your browser (Chrome, Edge, or Firefox).
+2. Ensure **"Allow access to file URLs"** is enabled in Tampermonkey settings (if loading locally).
 
-Zero-Trace Cleanup: Instantly deletes .srt, .orig, and .tmp files after muxing is complete. Your folder stays clean.
+---
 
-🎨 Advanced UX & Customization
-🖥️ Adaptive UI Scaling: A dynamic scaling slider allows you to resize the interface for anything from a 13" laptop to a massive 4K monitor.
+## 📁 File Structure
+Maintain the following files in the same directory:
 
-⚡ Native Command Injection: A dedicated input for raw yt-dlp arguments (e.g., --proxy, --limit-rate). These are injected with the highest priority, allowing power users to override default behaviors instantly.
-
-🛠️ Tech Stack
-Backend: [Deno] (TypeScript) - Secure, modern, and lightweight runtime.
-
-Frontend: Tampermonkey / GreaseMonkey (JavaScript).
-
-Core Engines: yt-dlp & FFmpeg.
-
-=======================================================
-🚀 Installation
-
-Step 1:
-Go to the Releases page.
-Download the lastest YT-Assistant-Full.zip.
-Unzip to any folder.
-
-Step 2: Install Tampermonkey:
-Go to your browser's extension store (Firefox, Chrome or Edge), search for the Tampermonkey extension, and install it.
-
-=======================================================
-Maintain the following file structure:
-Plaintext
+```text
 Root/
-├── YT-Smart-Assistant.bat
-├── script.user.js
+├── YT-Smart-Assistant.bat  <-- Run this!
+├── script.user.js          <-- Install this in Tampermonkey
 ├── server.bundle.js
 ├── deno.exe
 ├── ffmpeg.exe
 ├── ffprobe.exe
 └── yt-dlp.exe
 
-🎮 Usage
-Step 1: Launch Backend
+🎮 Usage   
+Launch Backend: Double-click YT-Smart-Assistant.bat.
 
-Double-click YT-Smart-Assistant.bat.
+Keep the terminal open: 🚀 Service started at: http://localhost:6969.
 
-Firewall Note: If Windows asks, click "Allow Access" for Deno.
-Keep the terminal window open: 🚀 Service started at: http://localhost:6969.
+Install Frontend: Drag and drop script.user.js into your Tampermonkey Dashboard and click Install.
 
-Step 2: Install Frontend
-Open Tampermonkey Dashboard.
-Drag and drop script.user.js into the dashboard and click Install.
-
-Ensure "Allow access to file URLs" is enabled in your browser's extension settings if you are loading the script locally.
-
-Step 3: Download
-Open any YouTube video. The floating panel will appear. Adjust your settings and click "🚀 Download Now".
+Download: Open any YouTube video. Adjust settings on the floating panel and click "🚀 Download Now".
 
 ⚙️ Configuration & Troubleshooting
 🍪 The Cookie Issue (Unlocking 4K/8K)
-By default, the engine attempts to use Firefox cookies to bypass YouTube's age/login restrictions.
+[!TIP]
+Don't forget to load cookies! By default, the engine uses Firefox cookies. Ensure you are logged into YouTube in Firefox.
 
-If you see a "Failed to fetch" or "Cookie error": Open the Advanced Settings (⚙️) in the UI panel.
+Using Chrome/Edge? Open Advanced Settings (⚙️) in the UI and change the browser source.
 
-Change Browser: Select your actual browser (Chrome/Edge/Firefox).
-
-Custom Path: If you use a Portable Browser, you can specify the profile path (find it via about:support in Firefox) directly in the UI.
+Portable Browser? You can specify the profile path directly in the UI settings.
 
 🌐 Proxy & VPN (Clash / V2Ray)
-If you are in a restricted region:
+Ensure "System Proxy" is enabled in your VPN client.
 
-Enable System Proxy: Ensure "System Proxy" is ON in your VPN client.
+If downloads fail, try enabling TUN Mode.
 
-TUN Mode: If downloads fail, enable TUN Mode in Clash/V2Ray for a more stable connection.
-
-Command Injection: You can also manually input --proxy "http://127.0.0.1:YOUR_PORT" in the UI's command box.
+You can manually input --proxy "http://127.0.0.1:PORT" in the UI command box.
 
 ⚠️ Disclaimer
-This project is for educational and technical research purposes only. Please respect copyright laws and the platform's Terms of Service. The author assumes no responsibility for any misuse of this tool.
+This project is for educational and technical research purposes only. Please respect copyright laws and platform Terms of Service. The author assumes no responsibility for any misuse.
 
-本项目仅用于技术研究与教育目的（展示 Deno 运行时、FFmpeg 流映射与本地全栈交互技术）。请遵守相关法律法规及平台服务条款，切勿用于侵犯版权的行为。
-
-
-
-
+本项目仅用于技术研究与教育目的。请遵守相关法律法规及平台服务条款，切勿用于侵犯版权的行为。
