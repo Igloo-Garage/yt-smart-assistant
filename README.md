@@ -1,11 +1,18 @@
 # 🚀 YT-Smart-Assistant
-
-**Current Version:** `V1.0.3`  
+**Current Version:** `V1.0.4`  
 *(This is a massive milestone update)*
 
 https://github.com/user-attachments/assets/3e530969-429c-429b-94b0-dd165222e63d
 
 ---
+Always keep `yt-dlp` updated to the latest version.   
+
+**Update via terminal**: 
+
+.\yt-dlp.exe -U --update-to nightly   
+
+**Or download the latest build**:   
+https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/latest/download/yt-dlp.exe
 
 ## 📖 Introduction (简介)
 
