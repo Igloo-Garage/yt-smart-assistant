@@ -1,16 +1,16 @@
 # 🚀 YT-Smart-Assistant
-**Current Version:** `V1.0.4`  
+**Current Version:** `V1.1`  
 *(This is a massive milestone update)*
 
 https://github.com/user-attachments/assets/3e530969-429c-429b-94b0-dd165222e63d
 
 ---
-Always keep `yt-dlp` updated to the latest version.   
+**Always keep `yt-dlp` updated to the latest version.**
 
+**use in-app ⬆️ to update yt-dlp / FFmpeg**
+or
 **Update via terminal**: 
-
 .\yt-dlp.exe -U --update-to nightly   
-
 **Or download the latest build**:   
 https://github.com/yt-dlp/yt-dlp-nightly-builds/releases/latest/download/yt-dlp.exe
 
@@ -86,12 +86,15 @@ Maintain the following files in the same directory:
 
 ```text
 Root/
-├── YT-Smart-Assistant.bat  <-- Run this!
+├── Start.bat  <-- Run this!
 ├── script.user.js          <-- Install this in Tampermonkey
+├──
+  server
 ├── server.bundle.js
 ├── deno.exe
 ├── ffmpeg.exe
 ├── ffprobe.exe
+├── ffplay.exe
 └── yt-dlp.exe
 ```
 
